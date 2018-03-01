@@ -1,0 +1,104 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <title>Javascript 3D Model Viewer</title>
+<meta name="description" content="Javascript 3D Model Viewer и un visualizzatore di modelli 3D realizzato in Javascript e basato sull&#39;utilizzo dell&#39;elemento canvas previsto dalle specifiche HTML 5."> 
+		<meta name="keywords" content="javascript, 3d model, viewer"> 
+
+	  <script type="text/javascript" src="./js/design.js"></script>
+		<script type="text/javascript" src="./js/transform.js"></script>
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<link href="./css/colorpicker.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="./js/colorpicker.js"></script>
+		<script type="text/javascript" src="./js/get_html_color.js"></script>
+		<script type="text/javascript" src="./js/draw_3d.js"></script>
+		
+</head>
+<body onload="init()" style="background-color:#000; padding:5px 0px; margin:0px;">
+
+	<div style="font-size: 12px; font-family:Verdana;  text-align: center; position: relative; width:100%; color: #fff">
+		<!--Model: <select onchange="changeModel()" id="modello"><option value="secret-small">новый Секрет</option></select>-->
+		<!--<span style="color: #f88133">|</span> Color-keys: <span style="color: red">r</span> - <span style="color: yellow">y</span> - <span style="color: green">g</span> - <span style="color: white">w</span> - <span style="color: blue">b</span><span style="color: #f88133">|</span> Transparency-keys: 0-9 <span style="color: #f88133">|</span>Motion-blur effect key: m-->
+
+		<div>
+			<p><button id="rotate_up" onClick="rotate_up();"><img src="./img/rotate_up.png" width="15px" height="15px"></button></p>
+			<p>
+				<button id="rotate_left" onClick="rotate_left();"><img src="./img/rotate_left.png" width="15px" height="15px"></button>
+				<button id="rotate_down" onClick="rotate_down();"><img src="./img/rotate_down.png" width="15px" height="15px"></button>
+				<button id="rotate_right" onClick="rotate_right();"><img src="./img/rotate_right.png" width="15px" height="15px"></button>
+			</p>
+			<p><button id="rotate_stop" onClick="rotate_stop();"><img src="./img/rotate_pause.png" width="15px" height="15px"></button><p>
+		</div>
+
+		<div style="width:100%; background-image: url(a.png); background-position: bottom left; background-repeat: repeat-x;margin:5px 0px 5px 0px;">
+			<div style="background-image: url(a.png); background-position: top left; background-repeat: repeat-x; padding: 16px 0px;">
+				<div style="background-color: #fff;">
+					<canvas id="display" width="1000" height="550"><p style="color:black;">
+						<div style="padding:200px">
+							<img src="./img/html5_ie1.bmp" align="right"></img>
+							<p style="color:red;"><strong>Внимание!</strong></p>
+							<p style="color:black;">Для просмотра этой 3d-модели секрета необходимо использовать <strong>браузер с поддержкой html5</strong></p>
+							<p style="color:black;">Эту надпись Вы скорее всего увидели, просматривая сайт в Internet Explorer - <u>попробуйте использовать другой современный браузер</u>.</p>
+						</div>
+					</canvas>
+				</div>
+			</div>
+		</div>
+		
+		<div style="text-align:center;">
+			<input type="checkbox" id="rotate_chkbox" onClick="document.onmousemove = onMouseMove;">Включить вращение с использованием мыши<br>
+			<table align="center" style="color:white; text-align:center;">
+				<tr>
+					<td>Цвет корпуса&emsp;
+						<div id="color_picker1">
+							<div class="jColorSelect" style="width: 221px; ">
+								<div style="background-color:rgb(236,0,141);" class="check checkblk"></div>
+								<div style="background-color:rgb(238,28,37);"></div>
+								<div style="background-color:rgb(255,241,0);"></div>
+								<div style="background-color:rgb(0,166,81);"></div>
+								<div style="background-color:rgb(0,173,238);"></div>
+								<div style="background-color:rgb(0,103,179);"></div>
+								<div style="background-color:rgb(4,46,110);"></div>
+								<div style="background-color:rgb(255,255,255);"></div>
+								<div style="background-color:rgb(35,31,32);"></div>
+							</div>
+						</div>
+						<div id="output1">#FFFFFF</div>
+					</td>
+					<td>Цвет штучки&emsp;
+						<div id="color_picker2">
+							<div class="jColorSelect" style="width: 221px; ">
+								<div style="background-color:rgb(236,0,141);" class="check checkblk"></div>
+								<div style="background-color:rgb(238,28,37);"></div>
+								<div style="background-color:rgb(255,241,0);"></div>
+								<div style="background-color:rgb(0,166,81);"></div>
+								<div style="background-color:rgb(0,173,238);"></div>
+								<div style="background-color:rgb(0,103,179);"></div>
+								<div style="background-color:rgb(4,46,110);"></div>
+								<div style="background-color:rgb(255,255,255);"></div>
+								<div style="background-color:rgb(35,31,32);"></div>
+							</div>
+						</div>
+						<div id="output2">#FFFFFF</div>
+					</td>
+					<td>Цвет колпачка&emsp;
+						<div id="color_picker3">
+							<div class="jColorSelect" style="width: 221px; ">
+								<div style="background-color:rgb(236,0,141);" class="check checkblk"></div>
+								<div style="background-color:rgb(238,28,37);"></div>
+								<div style="background-color:rgb(255,241,0);"></div>
+								<div style="background-color:rgb(0,166,81);"></div>
+								<div style="background-color:rgb(0,173,238);"></div>
+								<div style="background-color:rgb(0,103,179);"></div>
+								<div style="background-color:rgb(4,46,110);"></div>
+								<div style="background-color:rgb(255,255,255);"></div>
+								<div style="background-color:rgb(35,31,32);"></div>
+							</div>
+						</div>
+						<div id="output3">#FFFFFF</div>
+					</td>
+				</tr>
+			</table>
+			<button type="button" onClick="SetHTMLColorCookie();">Заказать цвет</button>
+		</div>
+	</div>
+</body>
+</html>

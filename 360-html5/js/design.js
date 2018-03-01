@@ -63,8 +63,8 @@ this.faces=[
 				this.axis_x = [1, 0, 0];
 				this.axis_y = [0, 1, 0];
 				this.axis_z = [0, 0, 1];
-				this.fillcolor = fillcolor;
-				this.linecolor = linecolor;
+				this.fillcolor = [255,3,3];
+				this.linecolor = [255,3,3];
 }
 
 // штучка корпуса
@@ -89,7 +89,8 @@ this.faces=[
 // вертикальные поверхности
 [1,3,19,17],[5,7,23,21],
 [9,11,27,25],[29,31,15,13],
-[1,2,10,9,25,26,18,17]
+[1,2,10,9,25,26,18,17],
+[5,6,14,13,29,30,22,21]
 ];
 
 		this.normals = new Array();
