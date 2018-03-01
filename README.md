@@ -5,9 +5,9 @@ This project implements html5-ready variants of original flash movie from [this 
 ## Features
 
 * There are 3 implementations of 360°-models:
-  * **360-flash**: flash-based implementation with color-picking and importing color variables from flash to js/html;
-  * **360-html5**: html5 canvas implementation with same features and possibility to use mouse and keyboard to control rotation (arrows, spacebar);
-  * **360-html5-images**: interesting js-based implementation using images of the model (without some features from above).
+  * **[360-flash](http://kanner.github.io/html-three-sixty/360-flash/)**: flash-based implementation with color-picking and importing color variables from flash to js/html;
+  * **[360-html5](http://kanner.github.io/html-three-sixty/360-html5/)**: html5 canvas implementation with same features and possibility to use mouse and keyboard to control rotation (arrows, spacebar);
+  * **[360-html5-images](http://kanner.github.io/html-three-sixty/360-html5-images/)**: interesting js-based implementation using images of the model (without some features from above).
 * html5-ready (360-html5, 360-html5-images).
 * Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+), 360-flash require flash-player to be pre-installed into browser.
 * MIT license
