@@ -13,7 +13,7 @@ function RecieveCapColor(colornum) {
         color_cap = colornum;
     }
 	else
-		alert("неправильный формат данных от flash");
+		alert("РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С… РѕС‚ flash");
 //	alert("ok");
 }
 
@@ -24,7 +24,7 @@ function RecieveBodyColor(colornum) {
         color_secretbody = colornum;
     }
     else
-        alert("неправильный формат данных от flash");
+        alert("РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С… РѕС‚ flash");
 //  alert("ok");
 }
 
@@ -35,7 +35,7 @@ function RecievePartColor(colornum) {
         color_part = colornum;
     }
 	else
-		alert("неправильный формат данных от flash");
+		alert("РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ С„РѕСЂРјР°С‚ РґР°РЅРЅС‹С… РѕС‚ flash");
 //	alert("ok");
 }
 
@@ -71,7 +71,7 @@ function GetColorCode(colornum) {
     return rgb
 }
 
-// кука на 20 минут
+// РєСѓРєР° РЅР° 20 РјРёРЅСѓС‚
 function SetColorCookie()
 {
   var time=new Date();
@@ -79,9 +79,9 @@ function SetColorCookie()
   document.cookie="cap="+color_cap+"; path=/; expires="+ time.toGMTString();
   document.cookie="secretbody="+color_secretbody+"; path=/; expires="+ time.toGMTString();
   document.cookie="part="+color_part+"; path=/; expires="+ time.toGMTString();
-  // перезагружаем страницу
+  // РїРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј СЃС‚СЂР°РЅРёС†Сѓ
 
-  location.href="/ordersecret_color.html";
+  location.href="http://prosecret.ru/ordersecret_color.html";
 }
 
 /*function DelColorCookie()
@@ -91,12 +91,12 @@ function SetColorCookie()
   document.cookie="_cap_="+color_cap+"; path=/; expires="+ time.toGMTString();
   document.cookie="_secretbody_="+color_secretbody+"; path=/; expires="+ time.toGMTString();
   document.cookie="_part_="+color_part+"; path=/; expires="+ time.toGMTString();
-  // перезагружаем страницу
+  // РїРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј СЃС‚СЂР°РЅРёС†Сѓ
 
   location.href="/ordersecret_color.html";
 }*/
 
-// достаем значения куки
+// РґРѕСЃС‚Р°РµРј Р·РЅР°С‡РµРЅРёСЏ РєСѓРєРё
 function findCookie(szName) 
 {
   var i = 0;
@@ -128,7 +128,7 @@ function findCookie(szName)
   return "";
 }
 
-// и заносим в выпадающие списки
+// Рё Р·Р°РЅРѕСЃРёРј РІ РІС‹РїР°РґР°СЋС‰РёРµ СЃРїРёСЃРєРё
 function ColorLists() {
     var cap = findCookie("cap");
     if (cap!=0 && cap<7) {

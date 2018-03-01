@@ -1,4 +1,4 @@
-// кука на 20 минут
+// РєСѓРєР° РЅР° 20 РјРёРЅСѓС‚
 function SetHTMLColorCookie()
 {
 var color_cap=document.getElementById('output3').innerHTML;
@@ -9,12 +9,12 @@ var color_part=document.getElementById('output2').innerHTML;
   document.cookie="html_cap="+color_cap+"; path=/; expires="+ time.toGMTString();
   document.cookie="html_secretbody="+color_secretbody+"; path=/; expires="+ time.toGMTString();
   document.cookie="html_part="+color_part+"; path=/; expires="+ time.toGMTString();
-  // перезагружаем страницу
+  // РїРµСЂРµР·Р°РіСЂСѓР¶Р°РµРј СЃС‚СЂР°РЅРёС†Сѓ
 
   location.href="http://prosecret.ru/ordersecret_html_color.html";
 }
 
-// достаем значения куки
+// РґРѕСЃС‚Р°РµРј Р·РЅР°С‡РµРЅРёСЏ РєСѓРєРё
 function findCookie(szName) 
 {
   var i = 0;
@@ -46,7 +46,7 @@ function findCookie(szName)
   return "";
 }
 
-// и заносим в выпадающие списки
+// Рё Р·Р°РЅРѕСЃРёРј РІ РІС‹РїР°РґР°СЋС‰РёРµ СЃРїРёСЃРєРё
 function HTMLColorLists() {
     var cap = HTMLCheckColor(findCookie("html_cap"));
     if (cap!=0) {

@@ -1,7 +1,7 @@
 	$(document).ready(function() {
 		$('#color_picker1').colorPicker( {
-			defaultColor:8, // индекс цвета по-умолчанию
-			columns:9,     // количество цветов
+			defaultColor:8, // РёРЅРґРµРєСЃ С†РІРµС‚Р° РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
+			columns:9,     // РєРѕР»РёС‡РµСЃС‚РІРѕ С†РІРµС‚РѕРІ
 			
 			click:function(c){
 				$('#output1').html(c);
@@ -11,8 +11,8 @@
 	
 	$(document).ready(function() {
 		$('#color_picker2').colorPicker( {
-			defaultColor:7, // индекс цвета по-умолчанию
-			columns:9,     // количество цветов
+			defaultColor:7, // РёРЅРґРµРєСЃ С†РІРµС‚Р° РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
+			columns:9,     // РєРѕР»РёС‡РµСЃС‚РІРѕ С†РІРµС‚РѕРІ
 			
 			click:function(c){
 				$('#output2').html(c);
@@ -22,8 +22,8 @@
 	
 	$(document).ready(function() {
 		$('#color_picker3').colorPicker( {
-			defaultColor:7, // индекс цвета по-умолчанию
-			columns:9,     // количество цветов
+			defaultColor:7, // РёРЅРґРµРєСЃ С†РІРµС‚Р° РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
+			columns:9,     // РєРѕР»РёС‡РµСЃС‚РІРѕ С†РІРµС‚РѕРІ
 			
 			click:function(c){
 				$('#output3').html(c);
@@ -87,7 +87,7 @@
 			ctx.clearRect(0,0,1000,550);
         }
         else {
-        	alert('Что то не так, возможно вам нужен браузер поновее?');
+        	alert('Р§С‚Рѕ С‚Рѕ РЅРµ С‚Р°Рє, РІРѕР·РјРѕР¶РЅРѕ РІР°Рј РЅСѓР¶РµРЅ Р±СЂР°СѓР·РµСЂ РїРѕРЅРѕРІРµРµ?');
         }
 
         if (document.getElementById("modello").value=='secret-small') {
@@ -195,7 +195,7 @@
 				rotate_solid_fast(parametrig1a, parametrig2a, world.solid[i]);
 			}
 
-			// счетчик
+			// СЃС‡РµС‚С‡РёРє
 			var contatore = 0;
 			visible_polygons = new Array();
 
@@ -203,18 +203,18 @@
 			var delta_y;
 			var delta_z;
 
-			// проходим по всем фигурам
+			// РїСЂРѕС…РѕРґРёРј РїРѕ РІСЃРµРј С„РёРіСѓСЂР°Рј
 			for (var j=0; j<world.solid_number; j++) {
-				// смотрим сколько точек
+				// СЃРјРѕС‚СЂРёРј СЃРєРѕР»СЊРєРѕ С‚РѕС‡РµРє
 				for (var i=0; i<world.solid[j].points_number; i++) {
 					world.solid[j].distances[i]= Math.pow(world.solid[j].points[i][0],2) + Math.pow(world.solid[j].points[i][1],2) + Math.pow(world.solid[j].points[i][2],2);
 				}
 			}
 
 //visible_polygons_figure = new Array();
-			// проходим по всем фигурам
+			// РїСЂРѕС…РѕРґРёРј РїРѕ РІСЃРµРј С„РёРіСѓСЂР°Рј
 			for (var j=0; j<world.solid_number; j++) {
-				// смотрим сколько плоскостей
+				// СЃРјРѕС‚СЂРёРј СЃРєРѕР»СЊРєРѕ РїР»РѕСЃРєРѕСЃС‚РµР№
 				for (var i=0; i<world.solid[j].faces_number; i++) {
 					var max =world.solid[j].distances[world.solid[j].faces[i][0]];
 					for (var w=1; w<world.solid[j].faces[i].length; w++) {
@@ -279,7 +279,7 @@ else
 //			ctx.fillRect([84,84,84],0,1000,550);
 		}
 		else {
-			alert('Что то не так, возможно вам нужен браузер поновее?');
+			alert('Р§С‚Рѕ С‚Рѕ РЅРµ С‚Р°Рє, РІРѕР·РјРѕР¶РЅРѕ РІР°Рј РЅСѓР¶РµРЅ Р±СЂР°СѓР·РµСЂ РїРѕРЅРѕРІРµРµ?');
 		}
 	}
 
